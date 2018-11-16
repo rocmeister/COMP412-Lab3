@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+#  usage: AllocHelper k
+#
+#  where k is the number of registers for the allocator
+#  to target. If k is not specified, it defaults to 5.
+#
+#  Locations for the ILOC Simulator, the Register Allocator,
+#  and the command that actually runs the code are specified
+#  in the defined variables SIM, ALLOC, and RUN
+#
+SIM=/clear/courses/comp412/students/lab2/sim
+ALLOC=~/Comp412/Lab2/report/412alloc
+RUN=/clear/courses/comp412/students/lab2/scripts/AllocOne
+DIR=$(pwd)
+#
+FLIST=$(ls *.i)
+echo "Allocator/Simulator test run in: $DIR"
+echo "-----"
+#
+for f in $(ls *.i); do
+    $RUN $f $ALLOC ${1:-5} $SIM
+    echo "-----"
+done
+#
+

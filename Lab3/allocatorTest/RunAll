@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# This script runs all of the ILOC files in the current directory (./*.i)
+# through the ILOC simulator and checks the output values against 
+# the specifications provided in the comments of the original ILOC file.
+#
+# usage: RunAll
+#
+#
+DIR=$(pwd)
+RUNALL=/clear/courses/comp412/students/lab2/scripts/RunAllHelper
+CHECK=/clear/courses/comp412/students/lab2/scripts/CheckResults
+LOG=~/RunAll.log
+#
+echo "Testing ILOC files against the specs in their comments"
+echo "in $DIR"
+echo ""
+$RUNALL >&$LOG
+$CHECK $LOG

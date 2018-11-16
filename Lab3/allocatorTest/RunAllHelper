@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+SIM=/clear/courses/comp412/students/lab2/sim
+RUN=/clear/courses/comp412/students/lab2/scripts/RunOne
+DIR=$(pwd)
+#
+FLIST=$(ls *.i)
+echo "Simulator test run in: $DIR"
+echo "-----"
+#
+for f in $(ls *.i); do
+    $RUN $f $SIM
+    echo "-----"
+done
+#
+

@@ -1,0 +1,27 @@
+ILOC Simulator, Version 412-2015-2
+Interlock settings: memory registers branches 
+
+0:	[loadI 1024 => r3 (1024)]
+1:	[loadI 128 => r2 (128)]
+2:	[loadI 32 => r1 (32)]
+3:	[loadI 1028 => r0 (1028)]
+4:	[mult r1 (32), r1 (32) => r3 (1024)]
+5:	[rshift r1 (32), r3 (1024) => r3 (32)]
+6:	[lshift r1 (32), r3 (32) => r2 (32)]
+7:	[add r2 (32), r3 (32) => r3 (64)]
+8:	[sub r1 (32), r3 (64) => r3 (-32)]
+9:	[store r3 (-32) => r0 (addr: 1028)]
+10:	[ stall ]
+11:	[ stall ] *9
+12:	[load r0 (addr: 1028) => r0 (-32)]
+13:	[loadI 128 => r3 (128)]
+14:	[ stall ] *12
+15:	[add r0 (-32), r3 (128) => r3 (96)]
+16:	[loadI 1024 => r0 (1024)]
+17:	[store r3 (96) => r0 (addr: 1024)]
+18:	[ stall ]
+19:	[ stall ] *17
+20:	[output 1024 (96)]
+output generates => 96
+
+Executed 16 instructions and 16 operations in 21 cycles.

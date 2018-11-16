@@ -1,0 +1,50 @@
+COMP 412, Fall 2015
+
+This directory contains a set of tools to assist in Lab 1.
+
+RunAll -- takes each ILOC file in a directory, runs it through
+       the ILOC simulator using the command-line flags specified
+       in the "SIM INPUT" comment, and compares the results of
+       that simulated execution against the results specified in
+       the "OUTPUT" comment.  It reports both whether the OUTPUT
+       specs match the code's behavior and the number of cycles 
+       that the simulator required to execute the code.
+
+       Syntax:
+		RunAll
+
+       Shell variables defined in "RunAll" specify locations for
+       the various tools and some of the parameters that they use.
+
+       The easiest way to use this script is to copy RunAll into
+       your directory and then execute it as ./RunAll
+
+       NOTE: This script will be used to test the correctness of
+       the "test block" that you submit with your lab 1 report.
+       You should use the script to check the block before you 
+       submit it.
+
+AllocAndRunAll -- takes each ILOC file in a directory, runs it
+       through a register allocator; runs the output of that
+       allocator through the simulator; and compares the results
+       of the simulated execution against the original file's 
+       OUTPUT spec.
+
+       Syntax:
+		AllocAndRunAll k
+
+       where "k" is the number of registers that the allocator
+       should target.
+
+       Shell variables defined in "AllocAndRunAll" specify locations
+       for the various tools and some of the paramters that they 
+       use.
+
+       The easiest way to use this script is to copy AllocAndRunAll and
+       AllocHelper into your directory, make any changes that you need,
+       and then execute 
+
+       	    	./AllocAndRunAll k
+
+       where k is a small integer specifying the number of registers
+       for the allocator to use.
